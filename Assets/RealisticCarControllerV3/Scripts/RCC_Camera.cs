@@ -319,8 +319,8 @@ public class RCC_Camera : MonoBehaviour{
 			if (Input.GetKeyDown (RCCSettings.changeCameraKB))
 				ChangeCamera ();
 
-			orbitX += Input.GetAxis (RCCSettings.mouseXInput) * orbitXSpeed * .02f;
-			orbitY -= Input.GetAxis (RCCSettings.mouseYInput) * orbitYSpeed * .02f;
+			//orbitX += Input.GetAxis (RCCSettings.mouseXInput) * orbitXSpeed * .02f;
+			//orbitY -= Input.GetAxis (RCCSettings.mouseYInput) * orbitYSpeed * .02f;
 
 			break;
 
