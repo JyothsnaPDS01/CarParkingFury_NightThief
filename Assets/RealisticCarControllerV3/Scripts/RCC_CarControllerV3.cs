@@ -1057,8 +1057,8 @@ public class RCC_CarControllerV3 : RCC_Core {
 		switch(RCCSettings.selectedControllerType){
 
 		case RCC_Settings.ControllerType.Keyboard:
-			
-			if(RCC_InputManager.GetKeyDown(RCCSettings.lowBeamHeadlightsKB))
+
+				if (RCC_InputManager.GetKeyDown(RCCSettings.lowBeamHeadlightsKB))
 				lowBeamHeadLightsOn = !lowBeamHeadLightsOn;
 
 			if(RCC_InputManager.GetKeyDown(RCCSettings.highBeamHeadlightsKB))
@@ -1120,18 +1120,6 @@ public class RCC_CarControllerV3 : RCC_Core {
 						RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Left;
 					
 				}
-				//else
-				//	RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Off;
-				//if (RCC_SceneManager.Instance.activePlayerVehicle)
-				//{
-
-				//	if (RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn != RCC_CarControllerV3.IndicatorsOn.Left)
-				//		RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Left;
-				//	else
-				//		RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Off;
-
-				//}
-
 
 				break;
 

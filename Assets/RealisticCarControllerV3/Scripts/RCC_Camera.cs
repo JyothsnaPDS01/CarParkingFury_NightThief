@@ -798,8 +798,8 @@ public class RCC_Camera : MonoBehaviour{
 		while (timer > 0f) {
 			
 			timer -= Time.deltaTime;
-			TPSDistance = Mathf.Lerp(TPSDistance, RCC_GetBounds.MaxBoundsExtent (playerCar.transform) * 2.55f, Time.deltaTime);
-			TPSHeight = Mathf.Lerp (TPSHeight, RCC_GetBounds.MaxBoundsExtent (playerCar.transform) * 1.25f, Time.deltaTime);
+			TPSDistance = Mathf.Lerp(TPSDistance, RCC_GetBounds.MaxBoundsExtent (playerCar.transform) * 3.55f, Time.deltaTime);
+			TPSHeight = Mathf.Lerp (TPSHeight, RCC_GetBounds.MaxBoundsExtent (playerCar.transform) * 2.25f, Time.deltaTime);
 			yield return null;
 
 		}
