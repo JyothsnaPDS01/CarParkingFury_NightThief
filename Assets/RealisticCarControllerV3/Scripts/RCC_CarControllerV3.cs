@@ -1064,7 +1064,7 @@ public class RCC_CarControllerV3 : RCC_Core {
 			if(RCC_InputManager.GetKeyDown(RCCSettings.highBeamHeadlightsKB))
 				highBeamHeadLightsOn = true;
 			else if(RCC_InputManager.GetKeyUp(RCCSettings.highBeamHeadlightsKB))
-				highBeamHeadLightsOn = false;
+				highBeamHeadLightsOn = true;
 
 			if(RCC_InputManager.GetKeyDown(RCCSettings.startEngineKB))
 				KillOrStartEngine();
@@ -1111,7 +1111,29 @@ public class RCC_CarControllerV3 : RCC_Core {
 
 			}
 
-			break;
+				if (RCC_SceneManager.Instance.activePlayerVehicle)
+				{
+
+					if (RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn != RCC_CarControllerV3.IndicatorsOn.Right)
+						RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Right;
+					else if (RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn != RCC_CarControllerV3.IndicatorsOn.Left)
+						RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Left;
+					
+				}
+				//else
+				//	RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Off;
+				//if (RCC_SceneManager.Instance.activePlayerVehicle)
+				//{
+
+				//	if (RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn != RCC_CarControllerV3.IndicatorsOn.Left)
+				//		RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Left;
+				//	else
+				//		RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Off;
+
+				//}
+
+
+				break;
 
 		case RCC_Settings.ControllerType.XBox360One:
 

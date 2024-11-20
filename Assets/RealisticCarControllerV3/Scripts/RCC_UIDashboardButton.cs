@@ -185,7 +185,6 @@ public class RCC_UIDashboardButton : MonoBehaviour, IPointerClickHandler {
 						RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Right;
 					else
 						RCC_SceneManager.Instance.activePlayerVehicle.indicatorsOn = RCC_CarControllerV3.IndicatorsOn.Off;
-
 				}
 
 			break;
