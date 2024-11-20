@@ -79,7 +79,7 @@ public class RCC_Camera : MonoBehaviour{
 	private int lastDirection = 1;
 
 	public float TPSDistance = 6f;										// The distance for TPS camera mode.
-	public float TPSHeight = 2f;											// The height we want the camera to be above the target for TPS camera mode.
+	public float TPSHeight = 3f;											// The height we want the camera to be above the target for TPS camera mode.
 	public float TPSHeightDamping = 10f;							// Height movement damper.
 	public float TPSRotationDamping = 5f;							// Rotation movement damper.
 	public float TPSTiltMaximum = 15f;								// Maximum tilt angle related with rigidbody local velocity.
@@ -791,6 +791,7 @@ public class RCC_Camera : MonoBehaviour{
 	}
 
 	public IEnumerator AutoFocus(){
+		Debug.LogError("AutoFocus3");
 
 		float timer = 3f;
 
@@ -798,7 +799,7 @@ public class RCC_Camera : MonoBehaviour{
 			
 			timer -= Time.deltaTime;
 			TPSDistance = Mathf.Lerp(TPSDistance, RCC_GetBounds.MaxBoundsExtent (playerCar.transform) * 2.55f, Time.deltaTime);
-			TPSHeight = Mathf.Lerp (TPSHeight, RCC_GetBounds.MaxBoundsExtent (playerCar.transform) * .75f, Time.deltaTime);
+			TPSHeight = Mathf.Lerp (TPSHeight, RCC_GetBounds.MaxBoundsExtent (playerCar.transform) * 1.25f, Time.deltaTime);
 			yield return null;
 
 		}
@@ -806,6 +807,8 @@ public class RCC_Camera : MonoBehaviour{
 	}
 
 	public IEnumerator AutoFocus(Transform bounds){
+
+		Debug.LogError("AutoFocus1");
 
 		float timer = 3f;
 
@@ -821,6 +824,7 @@ public class RCC_Camera : MonoBehaviour{
 	}
 
 	public IEnumerator AutoFocus(Transform bounds1, Transform bounds2){
+		Debug.LogError("AutoFocus1");
 
 		float timer = 3f;
 
@@ -838,7 +842,7 @@ public class RCC_Camera : MonoBehaviour{
 	public IEnumerator AutoFocus(Transform bounds1, Transform bounds2, Transform bounds3){
 
 		float timer = 5f;
-
+		Debug.LogError("AutoFocus 4");
 		while (timer > 0f) {
 
 			timer -= Time.deltaTime;

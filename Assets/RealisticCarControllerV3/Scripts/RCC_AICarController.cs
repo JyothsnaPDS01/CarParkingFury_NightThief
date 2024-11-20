@@ -462,7 +462,6 @@ public class RCC_AICarController : MonoBehaviour {
 		brakeInput = 0f;
 		steerInput = 0f;
 		handbrakeInput = 1f;
-
 	}
 
 	void CheckTargets() {
