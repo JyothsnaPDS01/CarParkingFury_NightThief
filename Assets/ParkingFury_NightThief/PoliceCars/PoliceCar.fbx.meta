@@ -3,7 +3,47 @@ guid: abdae3b9de96c944da5dd758954f3002
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: License_Plates
+    second: {fileID: 2100000, guid: 93aff1df2b8120f4f879f8b91c7dd262, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PoliceCar_Body
+    second: {fileID: 2100000, guid: c954972961fb1a04593313b6f1b3bb83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PoliceCar_Wheels
+    second: {fileID: 2100000, guid: 1a22b6bee6fb7c54b8c13b736ac14ca1, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 6342a8184d9842df9241185fd30386b9_RGB_PoliceCar_Body_Diffuse1
+    second: {fileID: 2800000, guid: 389872a91fd4782488ff3e903899c28d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 6a4c0a65c8dc40158b59614901a01bc6_N_PoliceCar_Wheels_Normal
+    second: {fileID: 2800000, guid: d942998a5ee25ec4bb7293a9cda49961, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 8f999b1983d746399c26f742db7cc869_RGB_PoliceCar_Wheels_Diffuse
+    second: {fileID: 2800000, guid: 2902236281d93214fabbe45ace94394a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cee342749aff4792812cdba25820bf37_N_PoliceCar_Body_Normal
+    second: {fileID: 2800000, guid: e7f9ff4a6bdc53741a371aad238b5258, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: d1dac2794ef34e23a3f7a51615ed7bdf_RGB_LicensePlates_Diffuse1
+    second: {fileID: 2800000, guid: be35ff639ef7b3648a911a091b662b5a, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -31,10 +71,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.8
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -81,7 +121,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.008
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
