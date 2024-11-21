@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/RealisticCarControllerV3/Demo Scenes/ParkingFury_NightCar.unity
+    path: Assets/ParkingFury_NightThief/Scenes/ParkingFury_NightCar.unity
     guid: 67301fef7b6f32547972e405b020f24a
   m_configObjects: {}
