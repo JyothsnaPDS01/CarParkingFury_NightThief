@@ -438,8 +438,8 @@ public class RCC_CarControllerV3 : RCC_Core {
 		CreateAudios();
 
 		// Initializes damage.
-		if(useDamage)
-			InitDamage();
+		//if(useDamage)
+		//	InitDamage();
 
 		// Checks the current selected behavior in RCC Settings. If any behavior selected, apply changes to the vehicle.
 		CheckBehavior ();

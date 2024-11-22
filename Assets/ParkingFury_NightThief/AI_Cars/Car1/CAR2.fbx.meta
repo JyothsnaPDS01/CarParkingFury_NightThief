@@ -3,7 +3,27 @@ guid: bd40f88550a53bd4d8cf10be7312df54
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Texture_Atlas
+    second: {fileID: 2100000, guid: c1c1431ae4099a74f89389956a43224d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vinyls
+    second: {fileID: 2100000, guid: 6e20d9e13e6709646a04407734ace9d7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1a016bcb407b41a5b0c84a6ed7c97906_A_ARC_Vinyls_Tex_Col1
+    second: {fileID: 2800000, guid: ca54dc4cbd43ad94faa2d5750bca6f3e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 43986a53548c42e3ae8a662ea3d86df2_RGB_ARC_Col_1_Tex
+    second: {fileID: 2800000, guid: 0ed97be09db640846b931b22dc996784, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -31,7 +51,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
