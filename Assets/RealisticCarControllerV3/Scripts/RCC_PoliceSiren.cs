@@ -62,7 +62,6 @@ public class RCC_PoliceSiren : MonoBehaviour {
 					
 					for (int i = 0; i < blueLights.Length; i++)
 						blueLights[i].intensity = Mathf.Lerp (blueLights[i].intensity, 0f, Time.deltaTime * 10f);
-					
 				}
 
 			}
