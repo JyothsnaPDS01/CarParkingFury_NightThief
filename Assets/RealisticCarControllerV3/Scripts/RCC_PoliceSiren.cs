@@ -21,6 +21,8 @@ public class RCC_PoliceSiren : MonoBehaviour {
 	public Light[] redLights;
 	public Light[] blueLights;
 
+	public AudioClip policesiren;
+
 	void Start () {
 
 		AI = GetComponentInParent<RCC_AICarController> ();
@@ -73,9 +75,13 @@ public class RCC_PoliceSiren : MonoBehaviour {
 		if (AI) {
 
 			if (AI.targetChase != null)
+			{
 				sirenMode = SirenMode.On;
+			}
 			else
+			{
 				sirenMode = SirenMode.Off;
+			}
 
 		}
 		

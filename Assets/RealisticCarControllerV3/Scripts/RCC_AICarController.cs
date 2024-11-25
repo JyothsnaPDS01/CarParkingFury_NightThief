@@ -25,7 +25,10 @@ public class RCC_AICarController : MonoBehaviour {
 	public RCC_AIWaypointsContainer waypointsContainer;					// Waypoints Container.
 	public int currentWaypointIndex = 0;											// Current index in Waypoint Container.
 	public Transform targetChase;											// Target Gameobject for chasing.
-	public string targetTag = "Player";									// Search and chase Gameobjects with tags.
+	public string targetTag = "Player";                                 // Search and chase Gameobjects with tags.
+
+	public AudioClip policeSiren;
+
 
 	// AI Type
 	public NavigationMode navigationMode;
@@ -36,6 +39,8 @@ public class RCC_AICarController : MonoBehaviour {
 	[Range(10f, 90f)] public float raycastAngle = 30f;
 	public LayerMask obstacleLayers = -1;
     public GameObject obstacle;
+
+	//Sound clip
 
 	public bool useRaycasts = true;		//	Using forward and sideways raycasts to avoid obstacles.
 	private float rayInput = 0f;				// Total ray input affected by raycast distances.
@@ -79,6 +84,8 @@ public class RCC_AICarController : MonoBehaviour {
 	// Firing an event when each RCC AI vehicle disabled / destroyed.
 	public delegate void onRCCAIDestroyed(RCC_AICarController RCCAI);
 	public static event onRCCAIDestroyed OnRCCAIDestroyed;
+
+	public GameObject PoliceSirenScreenDisplay;
 
 	void Awake() {
 
@@ -275,7 +282,17 @@ public class RCC_AICarController : MonoBehaviour {
 
 				// Checks for the distance to target. 
 				float distanceToTarget = GetPathLength(navigator.path);
-				
+
+				// Activate siren if the distance is less than 50 units
+				if (distanceToTarget < 50f)
+				{
+					ActivateSiren(true); // Custom method to turn on the siren
+				}
+				else if (distanceToTarget > 50f)
+				{
+					ActivateSiren(false); // Custom method to turn off the siren
+				}
+
 				if (!reversingNow) {
 
 					throttleInput = distanceToTarget < (stopFollowDistance * Mathf.Lerp(1f, 5f, carController.speed / 50f)) ? Mathf.Lerp(-5f, 1f, distanceToTarget / (stopFollowDistance / 1f)) : 1f;
@@ -351,6 +368,26 @@ public class RCC_AICarController : MonoBehaviour {
 
 		}
 		
+	}
+
+	private void ActivateSiren(bool status)
+    {
+		if (status)
+		{
+			Debug.Log("ActivateSiren" + status);
+			//GameObject.Find("GameAudioSource").GetComponent<AudioSource>().clip = policeSiren;
+			GameObject.Find("GameAudioSource").GetComponent<AudioSource>().Play();
+			//Activate the Police siren UI infront of the camera
+		}
+		//      else
+		//      {
+		//	if (GameObject.Find("GameAudioSource").GetComponent<AudioSource>() != null)
+		//	{
+		//		GameObject.Find("GameAudioSource").GetComponent<AudioSource>().Stop();
+		//	}
+		//	//Activate the Police siren UI infront of the camera
+		//}
+		GameObject.Find("PoliceSirenScreenDisplay").SetActive(status);
 	}
 
 	void FixedRaycasts() {
