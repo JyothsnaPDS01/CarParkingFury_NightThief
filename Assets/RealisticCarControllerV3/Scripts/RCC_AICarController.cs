@@ -27,8 +27,6 @@ public class RCC_AICarController : MonoBehaviour {
 	public Transform targetChase;											// Target Gameobject for chasing.
 	public string targetTag = "Player";                                 // Search and chase Gameobjects with tags.
 
-	public AudioClip policeSiren;
-
 
 	// AI Type
 	public NavigationMode navigationMode;
@@ -85,7 +83,9 @@ public class RCC_AICarController : MonoBehaviour {
 	public delegate void onRCCAIDestroyed(RCC_AICarController RCCAI);
 	public static event onRCCAIDestroyed OnRCCAIDestroyed;
 
-	public GameObject PoliceSirenScreenDisplay;
+	private PoliceSiren _policeSiren;
+
+	
 
 	void Awake() {
 
@@ -115,6 +115,8 @@ public class RCC_AICarController : MonoBehaviour {
 		detector = detectorGO.gameObject.AddComponent<SphereCollider> ();
 		detector.isTrigger = true;
 		detector.radius = 10f;
+
+		_policeSiren = GetComponentInParent<PoliceSiren>();
 
 	}
 
@@ -387,7 +389,7 @@ public class RCC_AICarController : MonoBehaviour {
 		//	}
 		//	//Activate the Police siren UI infront of the camera
 		//}
-		GameObject.Find("PoliceSirenScreenDisplay").SetActive(status);
+		_policeSiren.SetPoliceSirenStatus(status);
 	}
 
 	void FixedRaycasts() {
